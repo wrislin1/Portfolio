@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="styles.css">
     <title>Widler Rislin's Portfolio</title>
   </head>
-  <body>
+  <body id="page1">
     <header>
       <ul>
         <li><a href="index.html">Home</a></li>
@@ -19,16 +19,31 @@
             <a href="code/sql.html">SQL</a>
             <a href="code/se.html">Software Engineering Assignments</a>
           </div>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
       </ul>
     </header>
-    <main>
+      <div id ="mytext">
+        <p style="text-align:left;">Hello, My name is Widler Rislin, welcome to my portfolio. In here you will find coding and Software Engineering assignments I have
+    completed during my time at Florida State University and Valencia College where I currently attend and am majoring in Computer Technology and Software Design. This page will be updated
+    as I complete more assignments.</p>
 
-    </main>
+    <p>
+      <p>Please enter your name:</p>
 
-    <footer>
+<input id="name">
+<button type="button" onclick="welcome()">Submit</button>
+<p id="text"></p>
+<p id="date"></p>
+<script>
+function welcome() {
+  var name,message;
+  name = document.getElementById("name").value;
+  message = "Welcome to my Website " + name;
+  document.getElementById("text").innerHTML = message;
+  document.getElementById("date").innerHTML = new Date();
+}
+</script>
+    </p>
+  </div>
 
-    </footer>
   </body>
 </html>
