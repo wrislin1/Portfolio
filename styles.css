@@ -8,6 +8,22 @@ body, html {
   box-sizing: border-box;
 }
 
+#head1{
+  line-height: 500px;
+  text-align: center;
+   vertical-align: middle;
+}
+
+#about{
+  background-color: silver; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 24px;
+}
+
 #mytext{
 
   background-image: url("valencia.png");
@@ -15,6 +31,29 @@ body, html {
   background-position: center;
 background-repeat: no-repeat;
 background-size: cover;
+text-align: center;
+}
+
+#codes{
+  background-image: url("code.jpg");
+  height: 100%;
+  background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+}
+
+#me{
+  background-image: url("about.jpg");
+  height: 100%;
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+
+
+}
+
+#me p {
+  font-size: 24px;
 }
 
 
@@ -25,11 +64,12 @@ ul {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #333
+  background-color: #333;
 }
 
 li {
   float: left;
+  font-size: 24px;
 }
 
 li a {
@@ -87,4 +127,52 @@ li.dropdown {
 h2 a {
   color: blue;
 
+}
+
+
+.myheader {
+  position: fixed;
+}
+
+#list{
+  font-size: 30px;
+}
+
+.slides{
+   display: none;
+}
+
+.container{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+.num{
+  font-size: 40px;
+}
+
+.sbutton{
+    font-size: 24px;
+}
+
+.caption{
+    font-size: 24px;
+}
+
+td {
+  width: 100px;
+  height: 100px;
+}
+table {
+  margin: 5px auto;
+}
+.vert {
+  border-left: 2px solid black;
+  border-right: 2px solid black;
+}
+.hori {
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
 }

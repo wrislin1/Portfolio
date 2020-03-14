@@ -2,29 +2,106 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <script src="jquery-3.4.1.min.js"></script>
     <link rel="stylesheet" href="styles.css">
     <title>Widler Rislin's Portfolio</title>
   </head>
   <body id="page1">
-    <header>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li class="dropdown">
-          <a href="javascript:void(0)"
-          class="dropbtn">Portfolio</a>
-          <div class="dropdown-content">
-            <a href="ccode.html">C/C++</a>
-            <a href="java.html">Java</a>
-            <a href="sql.html">SQL</a>
-            <a href="se.html">Software Engineering Assignments</a>
-          </div>
-      </ul>
+
+    <header class="myheader">
+      <header>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li class="dropdown">
+            <a href="#codes"
+            class="dropbtn">Portfolio</a>
+            <div class="dropdown-content">
+              <a href="#console">Console Apps</a>
+              <a href="#apps">Applications</a>
+              <a href="games.html">Misc Projects</a>
+              <a href="se.html">Software Engineering Assignments</a>
+            </div>
+        </ul>
+      </header>
+
     </header>
+
       <div id ="mytext">
-        <p>Hello, My name is Widler Rislin, welcome to my portfolio. In here you will find coding and Software Engineering assignments I have
-    completed during my time at Florida State University and Valencia College where I currently attend and am majoring in Computer Technology and Software Design. This page will be updated
-    as I complete more assignments.</p>
+        <h1 id="head1">Widlers Rislin Portfolio</h1>
+        <button type="button" name="button" id="about" onclick="window.location.href = '#me';">About Me</button>
+  </div>
+  <div id="codes">
+
+     <div id="apps">
+       <h1>Recent Projects</h1>
+
+       <h2>ToDo List Web Application</h2>
+       <p id="list">To Do List Web Application
+This program is a Java to do list web application with an UI written using JSP and CSS,
+that supports adding an item, removing an item and displaying the to the do list.
+The data is stored in an Mysql database using hibernate.</p>
+
+<div class="container">
+
+  <div class="slides">
+    <div class="num">1/6</div>
+    <img src="list1.png">
+    <div class="caption">filler</div>
   </div>
 
+  <div class="slides">
+    <div class="num">2/6</div>
+    <img src="list2.png">
+    <div class="caption">filler</div>
+  </div>
+
+  <div class="slides">
+    <div class="num">3/6</div>
+    <img src="list3.png">
+    <div class="caption">filler</div>
+  </div>
+
+  <div class="slides">
+    <div class="num">4/6</div>
+    <img src="list4.png">
+    <div class="caption">filler</div>
+  </div>
+
+  <div class="slides">
+    <div class="num">5/6</div>
+    <img src="list5.png">
+    <div class="caption">filler</div>
+  </div>
+
+  <div class="slides">
+    <div class="num">6/6</div>
+    <img src="list6.png">
+    <div class="caption">filler</div>
+  </div>
+<button class="sbutton" type="button" name="button" onclick="next(-1);">Prev</button>
+<button class="sbutton" type="button" name="button" onclick="next(1);">Next</button>
+</div>
+
+     </div>
+
+     <div id="console">
+
+     </div>
+
+  </div>
+
+  <div id="me">
+    <h1> About Me</h1>
+    <p id="info">
+    Hello, My name is Widler Rislin, I am currently a senior at Valencia College majoring in Computer Technology and Software Development,
+    I plan on graduating after the Summer 2020 term. During my time at college, I have learned to program in C, C++, C# and Java.
+    I have learned to design websites utilizing HTML, CSS, and JavaScript. I have learned database management using SQL and have
+    used Database Management Systems such as Microsoft SQL Server and MySql.
+  </p>
+
+  <button type="button" name="button" onclick="window.location.href = 'https://github.com/wrislin1';">GitHub</button>
+  <button type="button" name="button" onclick="window.location.href = 'https://www.linkedin.com/in/widler-rislin-753391173/';">LinkedIn</button>
+  </div>
+    <script src="scripts.js"></script>
   </body>
 </html>
