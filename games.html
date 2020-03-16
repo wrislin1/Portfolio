@@ -9,23 +9,25 @@
   <body>
 
     <h1>Tic Tac Toe</h1>
+    <button type="button" name="button" onclick="startGame();">New Game</button>
+    <button type="button" name="button" onclick="endGame();">End Game</button>
     <table>
       <tr>
-        <td></td>
-        <td class="vert"></td>
-        <td></td>
+        <td class="cell" id ="one" onclick="tictactoe('one')"></td>
+        <td class="cell vert" id="two" onclick="tictactoe('two')"></td>
+        <td class="cell" id="three" onclick="tictactoe('three')"></td>
       </tr>
       <tr>
-        <td class="hori"></td>
-        <td class="vert hori"></td>
-        <td class="hori"></td>
+        <td class="cell hori" id="four" onclick="tictactoe('four')"></td>
+        <td class="cell vert hori" id="five" onclick="tictactoe('five')"></td>
+        <td class="cell hori" id="six" onclick="tictactoe('six')"></td>
       </tr>
       <tr>
-        <td></td>
-        <td class="vert"></td>
-        <td></td>
+        <td class="cell" id="seven" onclick="tictactoe('seven')"></td>
+        <td class="cell vert" id="eight" onclick="tictactoe('eight')"></td>
+        <td class="cell" id="nine" onclick="tictactoe('nine')"></td>
       </tr>
     </table>
-
+    <script src="scripts.js"></script>
   </body>
 </html>

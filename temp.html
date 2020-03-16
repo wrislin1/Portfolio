@@ -1,14 +1,57 @@
-<header>
-  <ul>
-    <li><a href="index.html">Home</a></li>
-    <li class="dropdown">
-      <a href="javascript:void(0)"
-      class="dropbtn">Portfolio</a>
-      <div class="dropdown-content">
-        <a href="ccode.html">C/C++</a>
-        <a href="java.html">Java</a>
-        <a href="sql.html">SQL</a>
-        <a href="se.html">Software Engineering Assignments</a>
-      </div>
-  </ul>
-</header>
+function comp{
+  var rand=Math.floor(Math.random() * 10);
+  var s;
+
+
+
+  var taken = true;
+    while(taken)
+    {
+      switch(rand)
+      {
+        case 1:
+        s = "one";
+        break;
+        case 2:
+        s = "two";
+        break;
+        case 3:
+        s = "three";
+        break;
+        case 4:
+        s = "four";
+        break;
+        case 5:
+        s = "five";
+        break;
+        case 6:
+        s = "six";
+        break;
+        case 7:
+        s = "seven";
+        break;
+        case 8:
+        s = "eight";
+        break;
+        case 9:
+        s = "nine";
+      }
+
+      if(game[s]=="")
+      {
+        document.getElementById(s).innerHTML="O";
+        game[s]="o";
+        if(game.won("o"))
+        {
+          endGame();
+        }
+
+        taken==false;
+      }
+      else {
+        rand=Math.floor(Math.random() * 10);
+      }
+    }
+
+
+}
