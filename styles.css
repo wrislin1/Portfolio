@@ -182,3 +182,35 @@ td{
 vertical-align: middle;
 font-size: 60px;
 }
+
+.cards{
+border: 1px solid black;
+      }
+
+#hearts{
+  background-image: url("heart.png");
+  background-size: 50%;
+  background-repeat: no-repeat;
+        }
+
+#spades{
+  background-image: url("spade.png");
+    background-size: 50%;
+    background-repeat: no-repeat;
+        }
+
+#diamonds{
+  background-image: url("diamond.png");
+    background-size: 50%;
+    background-repeat: no-repeat;
+          }
+
+#clubs{
+  background-image: url("club.png");
+    background-size: 50%;
+    background-repeat: no-repeat;
+      }
+
+#hit,#stand{
+  display: none;
+}
