@@ -1,3 +1,4 @@
+var turn=0;
 var gameState=false;
 var moves=1;
 var currSlides=1;
@@ -70,7 +71,7 @@ function startGame(){
 }
 
 function endGame(){
-
+  turn=0;
   gameState=false;
 
 
@@ -151,6 +152,7 @@ function tictactoe(s){
       if(game[s]!="x" && game[s]!="o")
       {
       document.getElementById(s).innerHTML="X";
+      turn++;
       game[s]="x";
       taken=false;
       }
@@ -160,9 +162,14 @@ function tictactoe(s){
         endGame();
       }
 
+      if(turn==5)
+      {
+        endGame();
+      }
+
   if(gameState==true)
     {
-      comp();
+      setTimeout(function(){ comp(); }, 1000);
     }
   }
 
