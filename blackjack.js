@@ -1,3 +1,5 @@
+var playerAce=false;
+var dealerAce=false;
 var gameState=false;
 var playerScore=0;
 var dealerScore=0;
@@ -27,7 +29,7 @@ function startGame(){
 
   if(playerScore==21){
       document.getElementById("winner").innerHTML = "Player Blackjack";
-      endGame();
+      dealerTurn();
   }
 }
 
@@ -61,6 +63,13 @@ var score=0;
   {
     case 1:
     value = "A";
+    if(p=="player")
+    {
+      playerAce=true;
+    }
+    else {
+      dealerAce=true;
+    }
     score=11;
     break;
     case 11:
@@ -109,6 +118,8 @@ var score=0;
 
   }
 
+  
+
   return temp;
 
 }
@@ -123,7 +134,7 @@ function playerTurn(){
 
       if(playerScore==21){
         document.getElementById("winner").innerHTML = "Player Blackjack";
-        endGame();
+        dealerTurn();
       }
       if(playerScore>21)
       {
@@ -139,10 +150,44 @@ function playerTurn(){
 function dealerTurn(){
   if(gameState==true)
   {
+    if(dealerScore<17)
+    {
 var dealer = document.getElementById("dealer").innerHTML;
 dealer+=getCard("dealer");
 document.getElementById("dealer").innerHTML=dealer;
-  document.getElementById("dealerScore").innerHTML = "Dealer Total: " + dealerScore;
-}
+document.getElementById("dealerScore").innerHTML = "Dealer Total: " + dealerScore;
+    }
 
+    if(dealerScore==playerScore)
+    {
+      document.getElementById("winner").innerHTML = "Tie";
+      endGame();
+    }
+
+    if (dealerScore>=17 && dealerScore<21 && dealerScore>playerScore) {
+      document.getElementById("winner").innerHTML = "Dealer Wins";
+      endGame();
+    }
+
+    if(dealerScore >= 17 && dealerScore<playerScore){
+      document.getElementById("winner").innerHTML = "Player Wins";
+      endGame();
+    }
+
+    if(dealerScore>21)
+    {
+      document.getElementById("winner").innerHTML = "Dealer Bust";
+      endGame();
+    }
+
+    if(dealerScore==21 && playerScore!= 21)
+    {
+      document.getElementById("winner").innerHTML = "Blackjack Dealer Wins";
+      endGame();
+    }
+}
+if(gameState==true)
+{
+dealerTurn();
+}
 }
