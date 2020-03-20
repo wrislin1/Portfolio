@@ -9,9 +9,10 @@ function random(min, max) {
 }
 
 function startGame(){
-if(gameState==false)
-{
+  playerScore=0;
+  dealerScore=0;
   gameState=true;
+  document.getElementById("winner").innerHTML = "";
   var player = document.getElementById("player");
   var dealer = document.getElementById("dealer");
 
@@ -20,13 +21,22 @@ if(gameState==false)
   dealer.innerHTML=getCard("dealer");
 
   document.getElementById("hit").style.display="inline";
-    document.getElementById("stand").style.display="inline";
-  }
+  document.getElementById("stand").style.display="inline";
+  document.getElementById("playerScore").innerHTML = "Player Total: " + playerScore;
+  document.getElementById("dealerScore").innerHTML = "Dealer Total: " + dealerScore;
 
+  if(playerScore==21){
+      document.getElementById("winner").innerHTML = "Player Blackjack";
+      endGame();
+  }
+}
+
+function endGame() {
+  gameState=false;
 }
 
 function getCard(p){
-
+var score=0;
   var temp = "";
   var suit;
   var rand  = random(0,3);
@@ -45,34 +55,57 @@ function getCard(p){
   }
 
   var value = random(1,13);
-  switch(value){
-    case 10:
+  if(value>10 || value==1)
+  {
+  switch(value)
+  {
+    case 1:
+    value = "A";
+    score=11;
+    break;
+    case 11:
+    value = "J";
+    score=10;
+    break;
+    case 12:
+    value = "Q";
+    score=10;
+    break;
+    case 13:
+    value = "K";
+    score=10;
 
   }
-  var hit = [suit,value];
+  }
+  else {
+    {
+      score=value;
+    }
+  }
+
 
   switch(suit)
   {
     case "Hearts":
-    temp += ("<td class='cards'  id ='hearts'>" + " " +hit[1] + "</td>");
+    temp += ("<td class='cards'  id ='hearts'>" + " " +value + "</td>");
     break;
     case "Spades":
-    temp += ("<td class='cards'  id ='spades'>" + " " +hit[1] + "</td>");
+    temp += ("<td class='cards'  id ='spades'>" + " " +value + "</td>");
     break;
     case "Diamonds":
-    temp += ("<td class='cards'  id ='diamonds'>" + " " +hit[1] + "</td>");
+    temp += ("<td class='cards'  id ='diamonds'>" + " " +value + "</td>");
     break;
     case "Clubs":
-    temp += ("<td class='cards'  id ='clubs'>" + " " +hit[1] + "</td>");
+    temp += ("<td class='cards'  id ='clubs'>" + " " +value + "</td>");
 
   }
 
   if(p=="player"){
-    playerScore+=hit[1];
+    playerScore+=score;
 
   }
   else if (p=="dealer") {
-    dealerScore+=hit[1];
+    dealerScore+=score;
 
   }
 
@@ -81,17 +114,35 @@ function getCard(p){
 }
 
 function playerTurn(){
+  if(gameState==true)
+  {
     var player = document.getElementById("player").innerHTML;
     player+=getCard("player");
     document.getElementById("player").innerHTML=player;
+      document.getElementById("playerScore").innerHTML = "Player Total: " + playerScore;
+
+      if(playerScore==21){
+        document.getElementById("winner").innerHTML = "Player Blackjack";
+        endGame();
+      }
+      if(playerScore>21)
+      {
+        document.getElementById("winner").innerHTML = "Player Bust";
+        endGame();
+      }
+    }
 
 
 
 }
 
 function dealerTurn(){
+  if(gameState==true)
+  {
 var dealer = document.getElementById("dealer").innerHTML;
 dealer+=getCard("dealer");
 document.getElementById("dealer").innerHTML=dealer;
+  document.getElementById("dealerScore").innerHTML = "Dealer Total: " + dealerScore;
+}
 
 }
