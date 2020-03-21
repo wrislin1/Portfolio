@@ -14,6 +14,8 @@ function startGame(){
   playerScore=0;
   dealerScore=0;
   gameState=true;
+  var playerAce=false;
+  dealerAce=false;
   document.getElementById("winner").innerHTML = "";
   var player = document.getElementById("player");
   var dealer = document.getElementById("dealer");
@@ -35,6 +37,8 @@ function startGame(){
 
 function endGame() {
   gameState=false;
+  playerAce=false;
+  dealerAce=false;
 }
 
 function getCard(p){
@@ -111,14 +115,22 @@ var score=0;
 
   if(p=="player"){
     playerScore+=score;
+    if(playerScore>21&&playerAce==true){
+      playerScore-=10;
+      playerAce=false;
+    }
 
   }
   else if (p=="dealer") {
     dealerScore+=score;
+    if(dealerScore>21&&dealerAce==true){
+      dealerScore-=10;
+      dealerAce=false;
+    }
 
   }
 
-  
+
 
   return temp;
 
