@@ -66,7 +66,8 @@ function random() {
 }
 
 function startGame(){
-  playerTurn=true;
+  turn=0;
+
   var i;
   var cell = document.getElementsByClassName("cell");
   for (i = 0; i < cell.length; i++) {
@@ -74,6 +75,8 @@ function startGame(){
   }
     game.reset();
   gameState=true;
+    playerTurn=true;
+
 }
 
 function endGame(){
@@ -168,13 +171,17 @@ return 10;
 }
 
 function blockwin(){
-  switch (checkForWin()) {
+  var s = checkForWin();
+      window.alert(s);
+  switch (s) {
+
     case 0:
       if(game.one=="")
       {
         document.getElementById("one").innerHTML="O";
         game.one="o";
         game.xrows[0]=3;
+        
         game.orows[0]++;
         game.orows[3]++;
         game.orows[6]++;
@@ -195,6 +202,9 @@ function blockwin(){
         game.orows[0]++;
         game.orows[5]++;
         game.orows[7]++;
+      }
+      else {
+        game.xrows[0]=3;
       }
       break;
       case 1:
@@ -221,8 +231,12 @@ function blockwin(){
         document.getElementById("eight").innerHTML="O";
         game.eight="o";
         game.xrows[1]=3;
+        game.xrows[5]=3;
         game.orows[1]++;
         game.orows[5]++;
+      }
+      else {
+        game.xrows[1]=3;
       }
       break;
       case 2:
@@ -252,6 +266,9 @@ function blockwin(){
         game.orows[5]++;
         game.orows[6]++;
       }
+      else {
+        game.xrows[2]=3;
+      }
       break;
       case 3:
       if(game.one=="")
@@ -278,6 +295,9 @@ function blockwin(){
         game.orows[2]++;
         game.orows[3]++;
         game.orows[7]++;
+      }
+      else {
+        game.xrows[3]=3;
       }
       break;
       case 4:
@@ -307,6 +327,9 @@ function blockwin(){
         game.orows[2]++;
         game.orows[4]++;
       }
+      else {
+        game.xrows[4]=3;
+      }
       break;
       case 5:
       if(game.seven=="")
@@ -334,6 +357,9 @@ function blockwin(){
         game.orows[2]++;
         game.orows[5]++;
         game.orows[6]++;
+      }
+      else {
+        game.xrows[5]=3;
       }
       break;
       case 6:
@@ -365,6 +391,9 @@ function blockwin(){
         game.orows[5]++;
         game.orows[6]++;
       }
+      else {
+        game.xrows[6]=3;
+      }
       break;
       case 7:
       if(game.three=="")
@@ -394,6 +423,9 @@ function blockwin(){
         game.orows[0]++;
         game.orows[5]++;
         game.orows[7]++;
+      }
+      else {
+        game.xrows[7]=3;
       }
       break;
 
@@ -435,6 +467,9 @@ function compWin() {
         game.seven="o";
         game.orows[0]=3;
       }
+      else{
+        game.orows[0]=3;
+      }
       break;
       case 1:
       if(game.two=="")
@@ -455,6 +490,9 @@ function compWin() {
         game.eight="o";
         game.orows[1]=3;
       }
+      else{
+        game.orows[1]=3;
+      }
       break;
       case 2:
       if(game.three=="")
@@ -473,6 +511,9 @@ function compWin() {
       else if (game.nine=="") {
         document.getElementById("nine").innerHTML="O";
         game.nine="o";
+        game.orows[2]=3;
+      }
+      else{
         game.orows[2]=3;
       }
       break;
@@ -497,6 +538,9 @@ function compWin() {
         game.three="o";
         game.orows[3]=3;
       }
+      else{
+        game.orows[3]=3;
+      }
       break;
       case 4:
       if(game.four=="")
@@ -515,6 +559,9 @@ function compWin() {
       else if (game.six=="") {
         document.getElementById("six").innerHTML="O";
         game.six="o";
+        game.orows[4]=3;
+      }
+      else{
         game.orows[4]=3;
       }
       break;
@@ -537,6 +584,9 @@ function compWin() {
         game.nine="o";
         game.orows[5]=3;
       }
+      else{
+        game.orows[5]=3;
+      }
       break;
       case 6:
       if(game.one=="")
@@ -557,6 +607,9 @@ function compWin() {
         game.nine="o";
         game.orows[6]=3;
       }
+      else{
+        game.orows[6]=3;
+      }
       break;
       case 7:
       if(game.three=="")
@@ -575,6 +628,9 @@ function compWin() {
       else if (game.seven=="") {
         document.getElementById("seven").innerHTML="O";
         game.seven="o";
+        game.orows[7]=3;
+      }
+      else{
         game.orows[7]=3;
       }
       break;
@@ -670,44 +726,69 @@ function addRow(s){
     game.xrows[0]++;
     game.xrows[3]++;
     game.xrows[6]++;
+    game.orows[0]=3;
+    game.orows[3]=3;
+    game.orows[6]=3;
+
       break;
     case "two":
     game.xrows[1]++;
     game.xrows[3]++;
+    game.orows[1]=3;
+    game.orows[3]=3;
       break;
       case "three":
       game.xrows[2]++;
       game.xrows[3]++;
       game.xrows[7]++;
+      game.orows[2]=3;
+      game.orows[3]=3;
+      game.orows[7]=3;
         break;
         case "four":
         game.xrows[0]++;
         game.xrows[4]++;
+        game.orows[0]=3;
+        game.orows[4]=3;
           break;
           case "five":
           game.xrows[1]++;
           game.xrows[4]++;
           game.xrows[6]++;
           game.xrows[7]++;
+          game.orows[1]=3;
+          game.orows[4]=3;
+          game.orows[6]=3;
+          game.orows[7]=3;
             break;
           case "six":
             game.xrows[2]++;
             game.xrows[4]++;
+            game.orows[2]=3;
+            game.orows[4]=3;
               break;
           case "seven":
               game.xrows[0]++;
               game.xrows[5]++;
               game.xrows[7]++;
+              game.orows[0]=3;
+              game.orows[5]=3;
+              game.orows[7]=3;
                 break;
 
           case "eight":
                 game.xrows[1]++;
                 game.xrows[5]++;
+                game.orows[1]=3;
+                game.orows[5]=3;
                   break;
               case "nine":
                   game.xrows[2]++;
                   game.xrows[5]++;
                   game.xrows[6]++;
+                  game.orows[2]=3;
+                  game.orows[5]=3;
+                  game.orows[6]=3;
                   break;
 }
 
@@ -739,12 +820,29 @@ function tictactoe(s){
 
   if(gameState==true)
     {
-      setTimeout(function(){ comp(); }, 1000);
+      comp();
     }
-    window.alert("zero = " + game.orows[0]+ ", one = " + game.orows[1] + ", two= " + game.orows[2] + ",three= " + game.orows[3] + ",four= " + game.orows[4] + ",five= " + game.orows[5] + ",six= " + game.orows[6] + ",seven= " + game.orows[7]);
 var cell =  document.getElementsByClassName("cell");
   }
 
   }
 
+}
+
+function info()
+{
+  window.alert("zero = " + game.orows[0]+ ", one = "
+  + game.orows[1] + ", two= " + game.orows[2]
+  + ",three= " + game.orows[3] + ",four= "
+  + game.orows[4] + ",five= " + game.orows[5]
+  + ",six= " + game.orows[6] + ",seven= "
+  + game.orows[7] + " \nxzero = "
+  + game.xrows[0]+ ", xone = "
+  + game.xrows[1] + ", xtwo= " + game.xrows[2]
+  + ",xthree= " + game.xrows[3] + ",xfour= "
+   + game.xrows[4] + ",xfive= " + game.xrows[5] + ",xsix= " + game.xrows[6]
+   + ",xseven= " + game.xrows[7]);
+
+   window.alert("1:"+game.one+" 2:"+game.two+" 3:"+game.three+" 4: "+game.four+" 5: "+game.five+" 6: "+game.six+" 7: "+
+ game.seven+" 8: "+game.eight+" 9: "+game.nine);
 }
