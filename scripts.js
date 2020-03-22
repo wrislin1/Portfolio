@@ -172,7 +172,7 @@ return 10;
 
 function blockwin(){
   var s = checkForWin();
-      window.alert(s);
+
   switch (s) {
 
     case 0:
@@ -181,7 +181,8 @@ function blockwin(){
         document.getElementById("one").innerHTML="O";
         game.one="o";
         game.xrows[0]=3;
-        
+        game.xrows[3]=3;
+        game.xrows[6]=3;
         game.orows[0]++;
         game.orows[3]++;
         game.orows[6]++;
@@ -191,6 +192,7 @@ function blockwin(){
         document.getElementById("four").innerHTML="O";
         game.four="o";
         game.xrows[0]=3;
+        game.xrows[4]=3;
         game.orows[0]++;
         game.orows[4]++;
       }
@@ -199,6 +201,8 @@ function blockwin(){
         document.getElementById("seven").innerHTML="O";
         game.seven="o";
         game.xrows[0]=3;
+        game.xrows[5]=3;
+        game.xrows[7]=3;
         game.orows[0]++;
         game.orows[5]++;
         game.orows[7]++;
@@ -213,6 +217,7 @@ function blockwin(){
         document.getElementById("two").innerHTML="O";
         game.two="o";
         game.xrows[1]=3;
+        game.xrows[3]=3;
         game.orows[1]++;
         game.orows[3]++;
       }
@@ -221,6 +226,9 @@ function blockwin(){
         document.getElementById("five").innerHTML="O";
         game.five="o";
         game.xrows[1]=3;
+        game.xrows[4]=3;
+        game.xrows[6]=3;
+        game.xrows[7]=3;
         game.orows[1]++;
         game.orows[4]++;
         game.orows[6]++;
@@ -245,6 +253,8 @@ function blockwin(){
         document.getElementById("three").innerHTML="O";
         game.three="o";
         game.xrows[2]=3;
+        game.xrows[3]=3;
+        game.xrows[7]=3;
         game.orows[2]++;
         game.orows[3]++;
         game.orows[7]++;
@@ -254,6 +264,7 @@ function blockwin(){
         document.getElementById("six").innerHTML="O";
         game.six="o";
         game.xrows[2]=3;
+        game.xrows[4]=3;
         game.orows[2]++;
         game.orows[4]++;
       }
@@ -262,6 +273,8 @@ function blockwin(){
         document.getElementById("nine").innerHTML="O";
         game.nine="o";
         game.xrows[2]=3;
+        game.xrows[5]=3;
+        game.xrows[6]=3;
         game.orows[2]++;
         game.orows[5]++;
         game.orows[6]++;
@@ -275,23 +288,29 @@ function blockwin(){
       {
         document.getElementById("one").innerHTML="O";
         game.one="o";
+        game.xrows[0]=3;
         game.xrows[3]=3;
-        game.orows[3]++;
-      }
-
-      else if (game.two=="") {
-        document.getElementById("two").innerHTML="O";
-        game.two="o";
-        game.xrows[3]=3;
+        game.xrows[6]=3;
         game.orows[0]++;
         game.orows[3]++;
         game.orows[6]++;
       }
 
+      else if (game.two=="") {
+        document.getElementById("two").innerHTML="O";
+        game.two="o";
+        game.xrows[1]=3;
+        game.xrows[3]=3;
+        game.orows[1]++;
+        game.orows[3]++;
+      }
+
       else if (game.three=="") {
         document.getElementById("three").innerHTML="O";
         game.three="o";
+        game.xrows[2]=3;
         game.xrows[3]=3;
+        game.xrows[7]=3;
         game.orows[2]++;
         game.orows[3]++;
         game.orows[7]++;
@@ -305,6 +324,7 @@ function blockwin(){
       {
         document.getElementById("four").innerHTML="O";
         game.four="o";
+        game.xrows[0]=3;
         game.xrows[4]=3;
         game.orows[0]++;
         game.orows[4]++;
@@ -313,7 +333,10 @@ function blockwin(){
       else if (game.five=="") {
         document.getElementById("five").innerHTML="O";
         game.five="o";
+        game.xrows[1]=3;
         game.xrows[4]=3;
+        game.xrows[6]=3;
+        game.xrows[7]=3;
         game.orows[1]++;
         game.orows[4]++;
         game.orows[6]++;
@@ -323,6 +346,7 @@ function blockwin(){
       else if (game.six=="") {
         document.getElementById("six").innerHTML="O";
         game.six="o";
+        game.xrows[2]=3;
         game.xrows[4]=3;
         game.orows[2]++;
         game.orows[4]++;
@@ -336,7 +360,9 @@ function blockwin(){
       {
         document.getElementById("seven").innerHTML="O";
         game.seven="o";
+        game.xrows[0]=3;
         game.xrows[5]=3;
+        game.xrows[7]=3;
         game.orows[0]++;
         game.orows[5]++;
         game.orows[7]++;
@@ -345,6 +371,7 @@ function blockwin(){
       else if (game.eight=="") {
         document.getElementById("eight").innerHTML="O";
         game.eight="o";
+        game.xrows[1]=3;
         game.xrows[5]=3;
         game.orows[1]++;
         game.orows[5]++;
@@ -353,7 +380,9 @@ function blockwin(){
       else if (game.nine=="") {
         document.getElementById("nine").innerHTML="O";
         game.nine="o";
+        game.xrows[2]=3;
         game.xrows[5]=3;
+        game.xrows[6]=3;
         game.orows[2]++;
         game.orows[5]++;
         game.orows[6]++;
@@ -367,6 +396,8 @@ function blockwin(){
       {
         document.getElementById("one").innerHTML="O";
         game.one="o";
+        game.xrows[0]=3;
+        game.xrows[3]=3;
         game.xrows[6]=3;
         game.orows[0]++;
         game.orows[3]++;
@@ -376,7 +407,10 @@ function blockwin(){
       else if (game.five=="") {
         document.getElementById("five").innerHTML="O";
         game.five="o";
+        game.xrows[1]=3;
+        game.xrows[4]=3;
         game.xrows[6]=3;
+        game.xrows[7]=3;
         game.orows[1]++;
         game.orows[4]++;
         game.orows[6]++;
@@ -386,6 +420,8 @@ function blockwin(){
       else if (game.nine=="") {
         document.getElementById("nine").innerHTML="O";
         game.nine="o";
+        game.xrows[2]=3;
+        game.xrows[5]=3;
         game.xrows[6]=3;
         game.orows[2]++;
         game.orows[5]++;
@@ -400,6 +436,8 @@ function blockwin(){
       {
         document.getElementById("three").innerHTML="O";
         game.three="o";
+        game.xrows[2]=3;
+        game.xrows[3]=3;
         game.xrows[7]=3;
         game.orows[2]++;
         game.orows[3]++;
@@ -409,6 +447,9 @@ function blockwin(){
       else if (game.five=="") {
         document.getElementById("five").innerHTML="O";
         game.five="o";
+        game.xrows[1]=3;
+        game.xrows[4]=3;
+        game.xrows[6]=3;
         game.xrows[7]=3;
         game.orows[1]++;
         game.orows[4]++;
@@ -419,6 +460,8 @@ function blockwin(){
       else if (game.seven=="") {
         document.getElementById("seven").innerHTML="O";
         game.seven="o";
+        game.xrows[0]=3;
+        game.xrows[5]=3;
         game.xrows[7]=3;
         game.orows[0]++;
         game.orows[5]++;
