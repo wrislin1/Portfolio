@@ -863,7 +863,7 @@ function tictactoe(s){
 
   if(gstate==true)
     {
-      comp();
+      setTimeout(function(){comp();},500);
     }
 var cell =  document.getElementsByClassName("cell");
   }
