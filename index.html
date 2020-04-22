@@ -103,6 +103,29 @@ The data is stored in an Mysql database using hibernate.</p>
   </table>
 </div>
 
+<div class="blackjack">
+  <h1>Blackack</h1>
+  <button type="button" name="button" onclick="startGame();">Start Game</button>
+  <table>
+    <tr id="dealer">
+
+    </tr>
+  </table>
+
+  <table>
+    <tr id="player">
+
+    </tr>
+  </table>
+
+  <button type="button" name="button" id="hit" onclick="playerTurn();">Hit</button>
+  <button type="button" name="button" id ="stand" onclick="dealerTurn();">Stand</button>
+  <h2 id="playerScore"></h2>
+  <h2 id="dealerScore"></h2>
+  <h2 id="winner"></h2>
+
+</div>
+
      </div>
 
 
@@ -121,6 +144,7 @@ The data is stored in an Mysql database using hibernate.</p>
   <button type="button" name="button" onclick="window.location.href = 'https://github.com/wrislin1';">GitHub</button>
   <button type="button" name="button" onclick="window.location.href = 'https://www.linkedin.com/in/widler-rislin-753391173/';">LinkedIn</button>
   </div>
+      <script src="blackjack.js"></script>
     <script src="scripts.js"></script>
   </body>
 </html>

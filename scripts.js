@@ -61,7 +61,7 @@ function next(n) {
 show(currSlides += n);
 }
 
-function random() {
+function getRandom() {
   return Math.floor(Math.random() * (9 - 1 + 1) ) + 1;
 }
 
@@ -79,7 +79,7 @@ function newGame(){
 
 }
 
-function endGame(){
+function finishGame(){
   turn=0;
   gstate=false;
 pTurn=false;
@@ -687,14 +687,14 @@ function comp(){
 
   if(checkForWin()==10)
 {
-  var rand=random();
+  var seed=getRandom();
   var s;
 
   var taken = true;
     while(taken)
     {
 
-      switch(rand)
+      switch(seed)
       {
         case 1:
         s = "one";
@@ -727,7 +727,7 @@ function comp(){
 
       if(game[s]=="x" || game[s]=="o")
       {
-        rand=random();
+        seed=getRandom();
       }
       else {
         setoRows(s);
@@ -740,14 +740,14 @@ function comp(){
     }
     if(game.won("o"))
     {
-      endGame();
+      finishGame();
     }
 }
 else {
   blockwin();
   if(game.won("o"))
   {
-    endGame();
+    finishGame();
   }
 }
 
@@ -756,7 +756,7 @@ else {
   compWin();
   if(game.won("o"))
   {
-    endGame();
+    finishGame();
   }
 }
 pTurn=true;
@@ -853,12 +853,12 @@ function tictactoe(s){
     if(taken==false)
 {
       if(game.won("x")){
-        endGame();
+        finishGame();
       }
 
       if(turn==5)
       {
-        endGame();
+        finishGame();
       }
 
   if(gstate==true)
