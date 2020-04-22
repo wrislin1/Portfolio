@@ -32,24 +32,28 @@ body, html {
 background-repeat: no-repeat;
 background-size: cover;
 text-align: center;
+  margin: 0;
+    padding: 1px;
 }
 
 #codes{
   background-image: url("code.jpg");
-  height: auto%;
+  height: auto;
   background-position: center;
 background-repeat: no-repeat;
 background-size: cover;
+  margin: 0;
+    padding: 1px;
 }
 
 #me{
   background-image: url("about.jpg");
-  height: 100%;
+  height: 50%;
 background-position: center;
 background-repeat: no-repeat;
 background-size: cover;
-
-
+  margin: 0;
+  padding: 1px;
 }
 
 #me p {
@@ -131,34 +135,40 @@ h2 a {
 
 
 .myheader {
+  margin: 0;
+  padding-bottom: 0;
   position: fixed;
+
 }
 
 #list{
-  font-size: 30px;
+  font-size: 20px;
 }
 
 .slides{
    display: none;
+
 }
 
 .container{
   display: block;
-  margin-left: auto;
+  margin-left: 13%;
   margin-right: auto;
-  width: 50%;
+  width: auto;
+  height: 12%;
+
 }
 
 .num{
-  font-size: 40px;
+  font-size: 24px;
 }
 
 .sbutton{
-    font-size: 24px;
+    font-size: 16px;
 }
 
 .caption{
-    font-size: 24px;
+    font-size: 16px;
 }
 
 td {
