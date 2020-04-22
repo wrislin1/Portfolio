@@ -151,11 +151,9 @@ h2 a {
 }
 
 .container{
-  display: block;
   margin-left: 13%;
   margin-right: auto;
-  width: auto;
-  height: 12%;
+
 
 }
 
@@ -223,4 +221,14 @@ border: 1px solid black;
 
 #hit,#stand{
   display: none;
+}
+
+#invader{
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+h1 {
+  text-align: center;
 }
