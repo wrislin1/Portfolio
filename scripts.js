@@ -1,6 +1,6 @@
 var turn=0;
-var gameState=false;
-var playerTurn=true;
+var gstate=false;
+var pTurn=true;
 var moves=1;
 var currSlides=1;
 
@@ -65,7 +65,7 @@ function random() {
   return Math.floor(Math.random() * (9 - 1 + 1) ) + 1;
 }
 
-function startGame(){
+function newGame(){
   turn=0;
 
   var i;
@@ -74,15 +74,15 @@ function startGame(){
       cell[i].innerHTML="";
   }
     game.reset();
-  gameState=true;
-    playerTurn=true;
+  gstate=true;
+    pTurn=true;
 
 }
 
 function endGame(){
   turn=0;
-  gameState=false;
-playerTurn=false;
+  gstate=false;
+pTurn=false;
 
 }
 
@@ -759,7 +759,7 @@ else {
     endGame();
   }
 }
-playerTurn=true;
+pTurn=true;
 }
 
 
@@ -840,7 +840,7 @@ function addRow(s){
 function tictactoe(s){
 
       var taken = true;
-  if(gameState==true && playerTurn==true){
+  if(gstate==true && pTurn==true){
       if(game[s]!="x" && game[s]!="o")
       {
       document.getElementById(s).innerHTML="X";
@@ -848,7 +848,7 @@ function tictactoe(s){
       game[s]="x";
       addRow(s);
       taken=false;
-      playerTurn=false;
+      pTurn=false;
       }
     if(taken==false)
 {
@@ -861,7 +861,7 @@ function tictactoe(s){
         endGame();
       }
 
-  if(gameState==true)
+  if(gstate==true)
     {
       comp();
     }
@@ -870,22 +870,4 @@ var cell =  document.getElementsByClassName("cell");
 
   }
 
-}
-
-function info()
-{
-  window.alert("zero = " + game.orows[0]+ ", one = "
-  + game.orows[1] + ", two= " + game.orows[2]
-  + ",three= " + game.orows[3] + ",four= "
-  + game.orows[4] + ",five= " + game.orows[5]
-  + ",six= " + game.orows[6] + ",seven= "
-  + game.orows[7] + " \nxzero = "
-  + game.xrows[0]+ ", xone = "
-  + game.xrows[1] + ", xtwo= " + game.xrows[2]
-  + ",xthree= " + game.xrows[3] + ",xfour= "
-   + game.xrows[4] + ",xfive= " + game.xrows[5] + ",xsix= " + game.xrows[6]
-   + ",xseven= " + game.xrows[7]);
-
-   window.alert("1:"+game.one+" 2:"+game.two+" 3:"+game.three+" 4: "+game.four+" 5: "+game.five+" 6: "+game.six+" 7: "+
- game.seven+" 8: "+game.eight+" 9: "+game.nine);
 }
