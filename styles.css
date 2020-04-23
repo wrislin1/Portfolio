@@ -44,7 +44,7 @@ background-repeat: no-repeat;
 background-size: cover;
   margin: 0;
     padding: 1px;
-  color:  #666600;
+  color:  #FF8C00;
 }
 
 #me{
@@ -142,7 +142,7 @@ h2 a {
 
 }
 
-#list{
+.desc{
   font-size: 20px;
 }
 
