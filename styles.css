@@ -15,13 +15,18 @@ body, html {
 }
 
 #about{
-  background-color: silver; /* Green */
+  background-color: #dddd; /* Green */
   border: none;
-  color: white;
+  color: black;
   padding: 15px 32px;
   text-decoration: none;
   display: inline-block;
   font-size: 24px;
+}
+
+#about:hover{
+background-color: silver;
+color: white;
 }
 
 #mytext{
